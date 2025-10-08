@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ImpactMetrics from "@/components/ImpactMetrics";
+import InfiniteScrollLogos from "@/components/InfiniteScrollLogos";
 import VenturesSection from "@/components/VenturesSection";
 import AboutUsSection from "@/components/AboutUsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -19,6 +20,9 @@ const Index = () => {
       
       {/* Impact Metrics */}
       <ImpactMetrics />
+      
+      {/* Company Logos - Infinite Scroll */}
+      <InfiniteScrollLogos />
       
       {/* Projects */}
       <VenturesSection />

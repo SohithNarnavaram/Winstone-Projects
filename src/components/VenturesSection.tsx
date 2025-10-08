@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Building2, Car, Heart, Sparkles, Play, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import winstoneProjectsImg from "@/assets/winstone-projects.jpg";
 import winstoneMotorsImg from "@/assets/winstone-motors.jpg";
 import winstoneFoundationImg from "@/assets/winstone-foundation.jpg";
@@ -13,6 +14,7 @@ const VenturesSection = () => {
   
   const ventures = [
     {
+      id: 'affordable-luxury-villas',
       name: "Affordable Luxury Villas",
       icon: Building2,
       description: "Premium villas designed with modern aesthetics and cutting-edge technology, creating luxury living experiences at affordable prices across prime Bangalore locations.",
@@ -23,6 +25,7 @@ const VenturesSection = () => {
       year: "2020"
     },
     {
+      id: 'farms-lifestyle-properties',
       name: "Farms & Lifestyle Properties",
       icon: Car,
       description: "Unique farm and lifestyle properties that blend luxury with nature, offering premium country living experiences with modern amenities and thoughtful design.",
@@ -33,6 +36,7 @@ const VenturesSection = () => {
       year: "2021"
     },
     {
+      id: 'residential-townships',
       name: "Residential Townships",
       icon: Heart,
       description: "Comprehensive residential townships around Bangalore featuring modern amenities, sustainable planning, and community-focused development with luxury standards.",
@@ -147,14 +151,16 @@ const VenturesSection = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-4 pt-4">
-                      <Button 
-                        className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105"
-                      >
-                        <span className="flex items-center gap-2">
-                          Learn More
-                          <ArrowRight className="w-4 h-4" />
-                        </span>
-                      </Button>
+                      <Link to={`/project/${ventures[activeProject].id}`}>
+                        <Button 
+                          className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105"
+                        >
+                          <span className="flex items-center gap-2">
+                            Learn More
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </Button>
+                      </Link>
                       <Button 
                         variant="outline"
                         className="border border-gray-600 text-gray-300 hover:bg-yellow-400/10 hover:border-yellow-400/30 hover:text-yellow-400 px-6 py-3 rounded-xl transition-all duration-300"
@@ -240,15 +246,17 @@ const VenturesSection = () => {
         <div className="text-center">
           <div className="inline-flex items-center gap-6">
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 hover:from-yellow-600 hover:via-yellow-700 hover:to-yellow-600 text-black font-bold px-12 py-4 rounded-xl shadow-2xl hover:shadow-yellow-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
-            >
-              <span className="flex items-center gap-3">
-              View All Projects
-                <ArrowRight className="w-5 h-5" />
-              </span>
-            </Button>
+            <Link to="/projects">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 hover:from-yellow-600 hover:via-yellow-700 hover:to-yellow-600 text-black font-bold px-12 py-4 rounded-xl shadow-2xl hover:shadow-yellow-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+              >
+                <span className="flex items-center gap-3">
+                View All Projects
+                  <ArrowRight className="w-5 h-5" />
+                </span>
+              </Button>
+            </Link>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
           </div>
         </div>

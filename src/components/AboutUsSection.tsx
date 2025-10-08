@@ -343,6 +343,17 @@ const AboutUsSection = () => {
                   <div className="text-xs text-gray-300 font-medium">Lives Impacted</div>
                 </Card>
               </div>
+
+              {/* Know More Button */}
+              <div className="text-center mt-8">
+                <Button 
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 border-0"
+                  size="lg"
+                  onClick={() => window.open('https://www.nayazfaiyazahmed.com', '_blank')}
+                >
+                  Know More
+                </Button>
+              </div>
             </div>
 
             {/* Right Column - Content */}
@@ -425,6 +436,7 @@ const AboutUsSection = () => {
                   <div className="w-16 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
                 </div>
               </Card>
+
             </div>
           </div>
         </div>
